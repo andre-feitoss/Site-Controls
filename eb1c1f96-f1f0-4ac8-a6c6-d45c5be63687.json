@@ -1,0 +1,14 @@
+{
+  "id":  "eb1c1f96-f1f0-4ac8-a6c6-d45c5be63687",
+  "name":  "projects",
+  "projectResources":  {
+    "resources":  [
+      {
+        "folderUri":  "file:///c%3A/Users/andre.feitosa/.gemini/config/projects"
+      }
+    ]
+  },
+  "settings":  {},
+  "updatedAt":  "2026-08-09T00:36:15.881371600Z",
+  "isWorkspaceOnly":  false
+}
