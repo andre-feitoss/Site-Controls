@@ -1,0 +1,285 @@
+/* ==========================================================================
+   CTRLS - Hero 3D & 3D Keycaps Transition Overlay Styles
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--header-height);
+  padding-bottom: 40px;
+  overflow: hidden;
+  perspective: 1200px;
+  z-index: 2;
+}
+
+/* Background Glows */
+.hero-glow-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 90vh;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, rgba(0, 82, 255, 0.08) 45%, transparent 75%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+.hero-light-beam {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 82, 255, 0.15) 0%, rgba(5, 5, 8, 0) 70%, rgba(5, 5, 8, 0.95) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Full-Screen 3D Stage Container */
+.stage-3d {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: transform 0.15s cubic-bezier(0.1, 0.8, 0.3, 1);
+  z-index: 3;
+}
+
+/* Full-Page Band Hero Wrapper */
+.band-hero-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transform-style: preserve-3d;
+}
+
+.band-image-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.band-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.1s linear;
+  filter: contrast(1.05) brightness(1.02);
+}
+
+.band-overlay-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 40%, rgba(5, 5, 8, 0.6) 80%, rgba(5, 5, 8, 0.95) 100%),
+              linear-gradient(180deg, rgba(5, 5, 8, 0.7) 0%, transparent 20%, transparent 80%, rgba(5, 5, 8, 0.95) 100%);
+  pointer-events: none;
+}
+
+/* Glowing SVG Orbital Ellipse Ring */
+.orbital-svg-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(68deg);
+  width: 1100px;
+  height: 540px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.orbital-path {
+  fill: none;
+  stroke: url(#royalOrbitalGradient);
+  stroke-width: 2;
+  stroke-dasharray: 8 6;
+  opacity: 0.65;
+  filter: drop-shadow(0 0 12px rgba(0, 229, 255, 0.8));
+  animation: rotateRing 60s linear infinite;
+}
+
+@keyframes rotateRing {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 500; }
+}
+
+/* Orbital Items 3D System */
+.orbital-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  z-index: 10;
+}
+
+.orbital-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: auto;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 20px;
+  background: rgba(12, 16, 28, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: 50px;
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  cursor: pointer;
+  transform-origin: center center;
+  transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+  will-change: transform;
+}
+
+.orbital-badge i {
+  font-size: 1.15rem;
+  color: var(--neon-cyan);
+  transition: transform var(--transition-bounce), color var(--transition-fast);
+}
+
+.orbital-badge:hover {
+  background: rgba(20, 28, 48, 0.95);
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+  box-shadow: 0 0 35px rgba(0, 229, 255, 0.9), 0 8px 24px rgba(0, 0, 0, 0.8);
+  z-index: 100 !important;
+}
+
+.orbital-badge:hover i {
+  color: var(--white);
+  transform: scale(1.3) rotate(-5deg);
+}
+
+/* Call to Action Group */
+.hero-cta-group {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   CTRL S 3D Keycaps Overlay & Particle Explosion
+   ========================================================================== */
+#ctrls-transition-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 5000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#ctrls-transition-overlay.active {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+#ctrls-particle-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.ctrls-3d-keys-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 28px;
+  perspective: 800px;
+}
+
+/* 3D Keycap Component */
+.keycap-3d {
+  position: relative;
+  width: 130px;
+  height: 110px;
+  background: linear-gradient(180deg, #101626 0%, #080c16 100%);
+  border: 2px solid var(--neon-cyan);
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0, 82, 255, 0.6), 0 0 30px rgba(0, 229, 255, 0.4), inset 0 3px 6px rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: transform 0.15s cubic-bezier(0.1, 0.8, 0.3, 1), box-shadow 0.15s ease;
+}
+
+.keycap-3d .key-top {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 2.2rem;
+  color: var(--white);
+  text-shadow: 0 0 20px var(--neon-cyan);
+  letter-spacing: 0.1em;
+}
+
+.keycap-3d.pressed {
+  transform: translateY(12px) scale(0.94);
+  box-shadow: 0 5px 15px rgba(0, 82, 255, 0.9), 0 0 50px rgba(0, 229, 255, 0.9), inset 0 1px 3px rgba(255, 255, 255, 0.5);
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+  .orbital-svg-ring {
+    width: 850px;
+    height: 420px;
+  }
+}
+
+@media (max-width: 600px) {
+  .keycap-3d {
+    width: 95px;
+    height: 85px;
+  }
+  .keycap-3d .key-top {
+    font-size: 1.6rem;
+  }
+  .orbital-svg-ring {
+    width: 620px;
+    height: 320px;
+  }
+}
