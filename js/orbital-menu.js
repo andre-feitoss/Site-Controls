@@ -104,13 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 }
 
-updateOrbit();
-``
-      }
-    });
 
-   
-  }
 
-  updateOrbit();
-});
+    
+
