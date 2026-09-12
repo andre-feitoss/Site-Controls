@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    requestAnimationFrame(updateOrbit);
+   
   }
 
   updateOrbit();
