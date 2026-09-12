@@ -296,5 +296,26 @@ transform: translateY(-250px);
 .orbital-path {
   display: none !important;
 }
+   .orbital-container {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+.orbital-badge {
+  position: static !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
   }
 }
