@@ -77,30 +77,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Animation Loop
   function updateOrbit() {
-    if (!isHovered) {
-      currentAngle += orbitSpeed;
-    }
+  const positions = [
+    [-500, -180], // YouTube
+    [-300, -250], // Spotify
+    [0, -280],    // Instagram
+    [300, -250],  // TikTok
+    [500, -180],  // Facebook
+    [-500, 180],  // LinkedIn
+    [-300, 250],  // Apple Music
+    [0, 280],     // Amazon Music
+    [300, 250],   // YouTube Music
+    [500, 180],   // Cifras Club
+    [-180, 0],    // Loja
+    [180, 0],     // Agenda
+    [0, 120]      // Contato
+  ];
 
-    const { rx, ry, rz } = getRadii();
+  badges.forEach((badge, i) => {
+    const [x, y] = positions[i];
 
-    badges.forEach((badge, i) => {
-      const angle = (2 * Math.PI * i) / totalItems + currentAngle;
-      
-      // Elliptical coordinates
-      const x = rx * Math.cos(angle);
-      const y = ry * Math.sin(angle);
-      const z = rz * Math.sin(angle);
+    badge.style.transform =
+      `translate(-50%, -50%) translate(${x}px, ${y}px)`;
 
-      // Depth math: scale, opacity, z-index
-      const scale = 0.7 + ((z + rz) / (2 * rz)) * 0.45; // scale between 0.70 and 1.15
-      const opacity = 0.6 + ((z + rz) / (2 * rz)) * 0.4; // opacity between 0.6 and 1.0
-      const zIndex = Math.round(((z + rz) / (2 * rz)) * 40) + 10;
+    badge.style.opacity = "1";
+    badge.style.zIndex = "50";
+  });
+}
 
-      // Apply transform if not currently hovered directly
-      if (!badge.matches(':hover')) {
-        badge.style.transform = `translate(-50%, -50%) translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, ${z.toFixed(2)}px) scale(${scale.toFixed(2)})`;
-        badge.style.opacity = opacity.toFixed(2);
-        badge.style.zIndex = zIndex;
+updateOrbit();
+``
       }
     });
 
