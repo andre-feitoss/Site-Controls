@@ -275,47 +275,55 @@
     width: 95px;
     height: 85px;
   }
+
   .keycap-3d .key-top {
     font-size: 1.6rem;
   }
-  .orbital-svg-ring {
-    width: 620px;
-    height: 320px;
-     }
+}
 
-
-/* REMOVER ORBITA TRACEJADA */
+/* REMOVER ÓRBITA TRACEJADA */
 .orbital-svg-ring,
 .orbital-path {
   display: none !important;
 }
-   .orbital-container {
+
+/* ORGANIZAR BOTÕES */
+.orbital-container {
   display: flex !important;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 15px;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
+
   position: absolute;
-  top: 65%;
   left: 50%;
-  transform: translateX(-50%);
+  top: 70%;
+
+  width: 90%;
+  max-width: 1000px;
+
+  transform: translateX(-50%) !important;
   z-index: 20;
+}
+
+.orbital-badge {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  opacity: 1 !important;
+  margin: 5px;
 }
 
 @media (max-width: 768px) {
   .orbital-container {
-    top: 75%;
+    top: 78%;
     gap: 10px;
-    padding: 0 15px;
+    width: 95%;
   }
 
   .orbital-badge {
     font-size: 0.8rem;
     padding: 8px 14px;
-  }
-}
   }
 }
