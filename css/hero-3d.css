@@ -312,10 +312,17 @@ transform: translateY(-250px);
   z-index: 20;
 }
 
-.orbital-badge {
-  position: static !important;
-  transform: none !important;
-  opacity: 1 !important;
+@media (max-width: 768px) {
+  .orbital-container {
+    top: 75%;
+    gap: 10px;
+    padding: 0 15px;
+  }
+
+  .orbital-badge {
+    font-size: 0.8rem;
+    padding: 8px 14px;
+  }
 }
   }
 }
