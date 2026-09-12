@@ -285,5 +285,16 @@
 
 .orbital-container{
 transform: translateY(-250px);
+
+   .orbital-container{
+  transform: translateY(-250px);
+}
+}
+
+/* REMOVER ORBITA TRACEJADA */
+.orbital-svg-ring,
+.orbital-path {
+  display: none !important;
+}
   }
 }
