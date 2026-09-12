@@ -183,10 +183,11 @@
 /* Call to Action Group */
 .hero-cta-group {
   position: absolute;
-  bottom: 140px;
+  top: 140px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
+
   display: flex;
   align-items: center;
   gap: 20px;
