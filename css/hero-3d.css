@@ -298,33 +298,11 @@
 
   position: absolute;
   left: 50%;
-  top: 70%;
+  top: 25%;
 
   width: 90%;
   max-width: 1000px;
 
   transform: translateX(-50%) !important;
   z-index: 20;
-}
-
-.orbital-badge {
-  position: static !important;
-  top: auto !important;
-  left: auto !important;
-  transform: none !important;
-  opacity: 1 !important;
-  margin: 5px;
-}
-
-@media (max-width: 768px) {
-  .orbital-container {
-    top: 78%;
-    gap: 10px;
-    width: 95%;
-  }
-
-  .orbital-badge {
-    font-size: 0.8rem;
-    padding: 8px 14px;
-  }
 }
