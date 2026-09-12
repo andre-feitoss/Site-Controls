@@ -281,5 +281,9 @@
   .orbital-svg-ring {
     width: 620px;
     height: 320px;
+     }
+
+.orbital-container{
+transform: translateY(180px);
   }
 }
