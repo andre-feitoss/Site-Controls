@@ -410,3 +410,26 @@ canvas,
 .band-overlay-glow {
   pointer-events: none !important;
 }
+/* todo seu CSS atual */
+
+/* ===== MENU MOBILE ===== */
+@media(max-width:991px){
+
+    .nav-menu{
+        display:none;
+    }
+
+    .nav-menu.active{
+        display:flex;
+        flex-direction:column;
+        position:absolute;
+        top:80px;
+        right:20px;
+        padding:20px;
+        border-radius:16px;
+        background:#111;
+        gap:15px;
+        z-index:9999;
+    }
+
+}
