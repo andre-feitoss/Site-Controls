@@ -55,17 +55,24 @@
 }
 
 html, body {
-  width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto; /* Permite rolar e ver todos os botões */
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-dark);
+  color: var(--white);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
+/* Spatial Viewport & Matrix Grid World */
 .spatial-world {
-  position: relative; /* Mudado de fixed para relative para permitir scroll natural */
-  width: 100%;
-  min-height: 100vh;
-  overflow: visible;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  perspective: 1200px;
   z-index: 1;
 }
 
@@ -373,41 +380,3 @@ h1, h2, h3, h4, h5, h6 {
   from { transform: translateX(100%); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
-/* ==========================================================================
-   DESBLOQUEIO DEFINITIVO DE CLIQUE NA BARRA DE REDES SOCIAIS
-   ========================================================================== */
-
-/* 1. Garante que o menu do topo (header/nav) não bloqueie a área dos botões */
-header, 
-.navbar, 
-.nav-container {
-  pointer-events: auto;
-}
-
-/* 2. Força o container dos botões sociais a ficar no topo de tudo */
-.social-bar {
-  position: relative !important;
-  z-index: 999999 !important; /* Valor máximo de camada */
-  pointer-events: auto !important; /* Reativa os cliques do mouse */
-  margin-top: 15px !important;
-}
-
-/* 3. Garante que os links e botões recebam o cursor e clique de link */
-.social-bar a,
-.social-btn {
-  position: relative !important;
-  z-index: 1000000 !important;
-  pointer-events: auto !important;
-  cursor: pointer !important;
-  display: inline-flex !important;
-}
-
-/* 4. Faz a imagem de fundo / Canvas 3D ignorar cliques e deixar passar para os botões */
-canvas,
-#stage-3d,
-.spatial-bg,
-.hero-3d-wrapper,
-.band-overlay-glow {
-  pointer-events: none !important;
-}
-
