@@ -13,7 +13,7 @@
   justify-content: space-between;
   padding-top: var(--header-height);
   padding-bottom: 40px;
-  overflow: visible;
+  overflow: hidden;
   perspective: 1200px;
   z-index: 2;
 }
@@ -51,9 +51,12 @@
   inset: 0;
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: transform 0.15s cubic-bezier(0.1, 0.8, 0.3, 1);
   z-index: 3;
-
-  pointer-events: none;
 }
 
 /* Full-Page Band Hero Wrapper */
@@ -180,15 +183,11 @@
 /* Call to Action Group */
 .hero-cta-group {
   position: absolute;
-  top: 140px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
-
- display: flex;
-...
-}
-   
+  display: flex;
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
@@ -276,190 +275,11 @@
     width: 95px;
     height: 85px;
   }
-
   .keycap-3d .key-top {
     font-size: 1.6rem;
   }
+  .orbital-svg-ring {
+    width: 620px;
+    height: 320px;
+  }
 }
-
-/* REMOVER ÓRBITA TRACEJADA */
-.orbital-svg-ring,
-.orbital-path {
-  display: none !important;
-}
-
-/* BOTÕES DE REDES SOCIAIS */
-.mobile-toggle{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:48px;
-    height:48px;
-    border:none;
-    border-radius:12px;
-    background:#d4af37;
-    color:#000;
-    cursor:pointer;
-    font-size:1.2rem;
-    z-index:9999;
-}
-
-.mobile-toggle:hover{
-    opacity:0.9;
-}
-
-@media (min-width: 769px){
-    .mobile-toggle{
-        display:none;
-    }
-}
-.social-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 11px 20px;
-  background: rgba(12, 16, 28, 0.88);
-  border: 1px solid var(--border-glass);
-  border-radius: 50px;
-  color: var(--white);
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.88rem;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: border-color 0.2s, background 0.2s;
-}
-
-.social-btn:hover {
-  background: rgba(20, 28, 48, 0.95);
-  border-color: var(--neon-cyan);
-  color: var(--neon-cyan);
-}
-/* ==========================================================================
-   CORREÇÃO DE VISIBILIDADE E CLIQUE DOS BOTÕES HERO & SOCIAL BAR
-   ========================================================================== */
-
-/* Força os elementos e os botões a ficarem acima das camadas 3D e liberarem o clique */
-.hero-cta-group,
-.social-bar {
-  position: relative;
-  z-index: 9999 !important; /* Eleva os botões acima do Canvas/Stage 3D */
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important; /* Garante que os cliques funcionem */
-}
-
-/* Agrupamento dos botões (Ouvir Agora / Conhecer a Banda) */
-.hero-cta-group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-}
-
-/* Layout da barra de botões sociais */
-.social-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin: 25px auto 10px auto;
-  max-width: 900px;
-}
-
-/* Estilo individual dos botões das redes sociais */
-.social-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 18px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-glass);
-  border-radius: 20px;
-  color: var(--white);
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-decoration: none;
-  backdrop-filter: blur(10px);
-  transition: all var(--transition-smooth);
-  position: relative;
-  z-index: 10000 !important;
-  pointer-events: auto !important;
-  cursor: pointer !important;
-}
-
-.social-btn:hover {
-  background: var(--royal-blue);
-  border-color: var(--neon-cyan);
-  color: var(--white);
-  box-shadow: var(--shadow-neon);
-  transform: translateY(-2px);
-}
-/* ==========================================================================
-   COLOCAR A FOTO/CANVAS ATRÁS E OS BOTÕES NA FRENTE
-   ========================================================================== */
-
-/* Coloca qualquer elemento de fundo/imagem/3D no fundo da tela */
-#stage-3d,
-.spatial-bg,
-.hero-3d-wrapper,
-.band-overlay-glow,
-canvas {
-  z-index: 1 !important;
-}
-
-/* Coloca todo o conteúdo de texto e botões na frente da foto */
-.hero-content,
-.hero-cta-group,
-.social-bar {
-  position: relative !important;
-  z-index: 9999 !important;
-}
-
-/* Garante o estilo e clique nos botões das redes sociais */
-.social-btn {
-  position: relative !important;
-  z-index: 10000 !important;
-  cursor: pointer !important;
-}
-/* ==========================================================================
-   DESBLOQUEIO DEFINITIVO DE CLIQUE NA BARRA DE REDES SOCIAIS
-   ========================================================================== */
-
-/* 1. Garante que o menu do topo (header/nav) não bloqueie a área dos botões */
-header, 
-.navbar, 
-.nav-container {
-  pointer-events: auto;
-}
-
-/* 2. Força o container dos botões sociais a ficar no topo de tudo */
-.social-bar {
-  position: relative !important;
-  z-index: 999999 !important; /* Valor máximo de camada */
-  pointer-events: auto !important; /* Reativa os cliques do mouse */
-  margin-top: 15px !important;
-}
-
-/* 3. Garante que os links e botões recebam o cursor e clique de link */
-.social-bar a,
-.social-btn {
-  position: relative !important;
-  z-index: 1000000 !important;
-  pointer-events: auto !important;
-  cursor: pointer !important;
-  display: inline-flex !important;
-}
-
-/* 4. Faz a imagem de fundo / Canvas 3D ignorar cliques e deixar passar para os botões */
-canvas,
-#stage-3d,
-.spatial-bg,
-.hero-3d-wrapper,
-.band-overlay-glow {
-  pointer-events: none !important;
-}
-
