@@ -289,6 +289,30 @@
 }
 
 /* BOTÕES DE REDES SOCIAIS */
+.mobile-toggle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:48px;
+    height:48px;
+    border:none;
+    border-radius:12px;
+    background:#d4af37;
+    color:#000;
+    cursor:pointer;
+    font-size:1.2rem;
+    z-index:9999;
+}
+
+.mobile-toggle:hover{
+    opacity:0.9;
+}
+
+@media (min-width: 769px){
+    .mobile-toggle{
+        display:none;
+    }
+}
 .social-btn {
   display: inline-flex;
   align-items: center;
