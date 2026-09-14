@@ -3,21 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CTRLS - Controlados pra Salvar | Primeira Banda Gospel de IA do Brasil</title>
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <!-- SEO -->
+  <title>CTRLS - Controlados pra Salvar | Banda Gospel Oficial</title>
   <meta name="description" content="Site oficial da banda gospel CTRLS (Controlados pra Salvar). Músicas, vídeos, agenda de shows, loja oficial e convites. Viva uma experiência imersiva 3D e navegação espacial cinematográfica.">
-  <meta name="keywords" content="CTRLS, Controlados pra Salvar, banda gospel, musica crista, louvor, adoração">
- <link rel="canonical" href="https://controladosprasalvar.com/">
+  <meta name="keywords" content="CTRLS, Controlados pra Salvar, banda gospel, musica crista, louvor, adoração, turnê oceanos">
   
   <!-- Open Graph / Social Media -->
-<meta property="og:title" content="CTRLS - Controlados pra Salvar | Primeira Banda Gospel de IA do Brasil">
+  <meta property="og:title" content="CTRLS - Controlados pra Salvar | Banda Gospel Oficial">
   <meta property="og:description" content="Experimente o novo álbum 'Dez Vezes Mais' com a experiência visual 3D imersiva da banda CTRLS.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://controladosprasalvar.com">
-  <meta property="og:site_name" content="Controlados pra Salvar">
-  <meta property="og:image"
-  content="https://controladosprasalvar.com/assets/images/band-hero-v3.png">
+  <meta property="og:image" content="assets/images/band-hero.jpg">
 
   <!-- Google Fonts & FontAwesome 6 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,10 +27,10 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MusicGroup",
+    "@type": "Organization",
     "name": "Controlados pra salvar",
-    "url": "https://controladosprasalvar.com",
-    "logo": "https://controladosprasalvar.com/assets/images/band-hero-v3.png",
+    "url": "https://controladosprasalvar.com.br",
+    "logo": "https://controladosprasalvar.com.br/logo.png",
     "sameAs": [
       "https://www.facebook.com/profile.php?id=61588185635948",
       "https://www.instagram.com/controladosprasalvar/",
@@ -50,17 +44,6 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/hero-3d.css">
   <link rel="stylesheet" href="css/components.css">
-
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L8H9GC1FC6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-L8H9GC1FC6');
-</script>
-  
 </head>
 <body>
 
@@ -90,15 +73,9 @@
           <span id="cart-badge-count" style="display:none; position:absolute; top:-4px; right:-4px; background:var(--royal-blue); color:#fff; font-size:0.7rem; font-weight:800; padding:2px 6px; border-radius:10px;">0</span>
         </a>
         <a href="#contato" class="btn btn-gold" style="padding: 10px 20px; font-size:0.85rem;">Convidar</a>
-<button
-type="button"
-class="mobile-toggle"
-id="mobile-toggle"
-aria-label="Abrir Menu">
-<i class="fas fa-bars"></i>
-</button>
-
-
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir Menu">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </div>
   </header>
@@ -113,27 +90,28 @@ aria-label="Abrir Menu">
         <div class="hero-light-beam"></div>
 
         <div class="stage-3d" id="stage-3d">
-             
+          <svg class="orbital-svg-ring" viewBox="0 0 1100 540">
+            <defs>
+              <linearGradient id="royalOrbitalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.95"/>
+                <stop offset="50%" stop-color="#0052ff" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="550" cy="270" rx="530" ry="250" class="orbital-path" />
+          </svg>
 
           <div class="band-hero-wrapper" id="band-hero-wrapper">
-
             <div class="band-image-box">
-              <img src="assets/images/band-hero-v3.png" alt="Banda Gospel CTRLS - Controlados pra Salvar" class="band-image" id="band-image" />
+              <img src="assets/images/band-hero.jpg" alt="Banda Gospel CTRLS - Controlados pra Salvar" class="band-image" id="band-image" />
               <div class="band-overlay-glow"></div>
             </div>
           </div>
+
+          <div class="orbital-container" id="orbital-container">
+            <!-- 13 Interactive badges rendered by orbital-menu.js -->
+          </div>
         </div>
-
-       <div class="social-bar" id="social-bar">
-  <a href="https://www.youtube.com/@controladosprasalvar/shorts" class="social-btn" target="_blank" rel="noopener noreferrer">YouTube</a>
-  <a href="https://open.spotify.com/intl-pt/album/1gALQbFq8B3aNmqkhYyy3A" class="social-btn" target="_blank" rel="noopener noreferrer">Spotify</a>
-  <a href="https://www.instagram.com/controladosprasalvar/" class="social-btn" target="_blank" rel="noopener noreferrer">Instagram</a>
-  <a href="https://www.tiktok.com/@controlados.pra.s" class="social-btn" target="_blank" rel="noopener noreferrer">TikTok</a>
-  <a href="https://whatsapp.com/channel/0029Vb8Hc2EBVJkv4Q74Vy0Z" class="social-btn" target="_blank" rel="noopener noreferrer">Canal Whatsapp</a>
-  <a href="https://facebook.com" class="social-btn" target="_blank" rel="noopener noreferrer">Facebook</a>
-  <a href="https://www.linkedin.com/in/controlados-pra-salvar-81848b424/" class="social-btn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-</div>
-
 
         <div class="hero-cta-group">
           <a href="#musicas" class="btn btn-gold">
@@ -145,23 +123,18 @@ aria-label="Abrir Menu">
         </div>
       </section>
 
-    <!-- SECTION 2: SOBRE A BANDA (Grid 1, 0 - Move RIGHT) -->
-<section class="section-padding" id="sobre">
-  <div class="container">
-    <div style="text-align:center;">
-      <span class="section-tag"><i class="fas fa-users text-gold"></i> Quem Somos</span>
-      <h2 class="section-title text-gradient">Propósito & Louvor</h2>
-      <p class="section-subtitle" style="color: #ffffff;">
-        Controlados pra salvar é um projeto musical de pop gospel cristão que une música, fé e tecnologia para levar a mensagem do Evangelho de Cristo a qualquer pessoa em qualquer lugar!
-      </p>
-    </div>
-  </div>
-</section>
-
+      <!-- SECTION 2: SOBRE A BANDA (Grid 1, 0 - Move RIGHT) -->
+      <section class="section-padding" id="sobre">
+        <div class="container">
+          <div style="text-align:center;">
+            <span class="section-tag"><i class="fas fa-users text-gold"></i> Quem Somos</span>
+            <h2 class="section-title text-gradient">Propósito & Louvor</h2>
+            <p class="section-subtitle">
+              Controlados pra salvar é um projeto musical de pop gospel cristão que une música, fé e tecnologia para levar a mensagem do Evangelho de Cristo à todos os lugares e a qualquer pessoa
+            </p>
           </div>
 
-<div class="members-grid">
-  
+          <div class="members-grid">
             <!-- Integrante 1: LEONA CRUZ -->
             <div class="member-card glass-card">
               <div class="member-card-inner">
@@ -480,7 +453,10 @@ aria-label="Abrir Menu">
   </div>
 
   <!-- JavaScript Modules -->
-   <script src="js/audio-player.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/orbital-menu.js"></script>
+  <script src="js/camera-parallax.js"></script>
+  <script src="js/audio-player.js"></script>
   <script src="js/ctrls-transition.js"></script>
   <script src="js/spatial-nav.js"></script>
   <script src="js/app.js"></script>
