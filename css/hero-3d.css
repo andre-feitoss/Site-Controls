@@ -292,27 +292,32 @@
 }
 
 /* ORGANIZAR BOTÕES */
+/* Barra de redes sociais na parte inferior da capa */
 .orbital-container {
-  display: flex !important;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-
-  position: flex;
-  left: 50%;
-  top: 50%;
-
-  width: 90%;
-  max-width: 1000px;
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 40px !important;
+  top: auto !important;
 
   transform: translateX(-50%) !important;
-  z-index: 20;
+
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 15px !important;
+
+  width: auto !important;
+  z-index: 999 !important;
 }
+
+/* Remove posicionamento orbital */
 .orbital-badge {
-  position: relative;
+  position: relative !important;
   top: auto !important;
   left: auto !important;
   transform: none !important;
+  margin: 0 !important;
 }
-``
