@@ -55,24 +55,17 @@
 }
 
 html, body {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background-color: var(--bg-dark);
-  color: var(--white);
-  font-family: var(--font-body);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto; /* Permite rolar e ver todos os botões */
 }
 
-/* Spatial Viewport & Matrix Grid World */
 .spatial-world {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  perspective: 1200px;
+  position: relative; /* Mudado de fixed para relative para permitir scroll natural */
+  width: 100%;
+  min-height: 100vh;
+  overflow: visible;
   z-index: 1;
 }
 
