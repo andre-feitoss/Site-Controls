@@ -398,3 +398,30 @@
   box-shadow: var(--shadow-neon);
   transform: translateY(-2px);
 }
+/* ==========================================================================
+   COLOCAR A FOTO/CANVAS ATRÁS E OS BOTÕES NA FRENTE
+   ========================================================================== */
+
+/* Coloca qualquer elemento de fundo/imagem/3D no fundo da tela */
+#stage-3d,
+.spatial-bg,
+.hero-3d-wrapper,
+.band-overlay-glow,
+canvas {
+  z-index: 1 !important;
+}
+
+/* Coloca todo o conteúdo de texto e botões na frente da foto */
+.hero-content,
+.hero-cta-group,
+.social-bar {
+  position: relative !important;
+  z-index: 9999 !important;
+}
+
+/* Garante o estilo e clique nos botões das redes sociais */
+.social-btn {
+  position: relative !important;
+  z-index: 10000 !important;
+  cursor: pointer !important;
+}
