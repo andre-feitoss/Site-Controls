@@ -373,3 +373,40 @@ h1, h2, h3, h4, h5, h6 {
   from { transform: translateX(100%); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
+/* ==========================================================================
+   DESBLOQUEIO DEFINITIVO DE CLIQUE NA BARRA DE REDES SOCIAIS
+   ========================================================================== */
+
+/* 1. Garante que o menu do topo (header/nav) não bloqueie a área dos botões */
+header, 
+.navbar, 
+.nav-container {
+  pointer-events: auto;
+}
+
+/* 2. Força o container dos botões sociais a ficar no topo de tudo */
+.social-bar {
+  position: relative !important;
+  z-index: 999999 !important; /* Valor máximo de camada */
+  pointer-events: auto !important; /* Reativa os cliques do mouse */
+  margin-top: 15px !important;
+}
+
+/* 3. Garante que os links e botões recebam o cursor e clique de link */
+.social-bar a,
+.social-btn {
+  position: relative !important;
+  z-index: 1000000 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+}
+
+/* 4. Faz a imagem de fundo / Canvas 3D ignorar cliques e deixar passar para os botões */
+canvas,
+#stage-3d,
+.spatial-bg,
+.hero-3d-wrapper,
+.band-overlay-glow {
+  pointer-events: none !important;
+}
