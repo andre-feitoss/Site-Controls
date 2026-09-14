@@ -13,7 +13,7 @@
   justify-content: space-between;
   padding-top: var(--header-height);
   padding-bottom: 40px;
-  overflow: hidden;
+  overflow: visible;
   perspective: 1200px;
   z-index: 2;
 }
@@ -188,7 +188,10 @@
   transform: translateX(-50%);
   z-index: 20;
 
-  display: flex;
+ display: flex;
+...
+}
+   
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
@@ -296,9 +299,9 @@
   align-items: center;
   gap: 15px;
 
-  position: absolute;
+  position: flex;
   left: 50%;
-  top: 25%;
+  top: 50%;
 
   width: 90%;
   max-width: 1000px;
@@ -306,3 +309,10 @@
   transform: translateX(-50%) !important;
   z-index: 20;
 }
+.orbital-badge {
+  position: relative;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+}
+``
