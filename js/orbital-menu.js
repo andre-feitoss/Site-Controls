@@ -9,19 +9,24 @@ document.addEventListener('DOMContentLoaded', () => {
   orbitalContainer.innerHTML = '';
 
   const links = [
-    'YouTube',
-    'Spotify',
-    'Instagram',
-    'TikTok',
-    'Facebook',
-    'LinkedIn',
-    'Contato'
+    { nome: 'YouTube',   href: 'https://www.youtube.com/@controladosprasalvar/shorts' },
+    { nome: 'Spotify',   href: 'https://open.spotify.com/intl-pt/album/1gALQbFq8B3aNmqkhYyy3A' },
+    { nome: 'Instagram', href: 'https://www.instagram.com/controladosprasalvar/' },
+    { nome: 'TikTok',    href: 'https://www.tiktok.com/@controlados.pra.s' },
+    { nome: 'Facebook',  href: 'https://facebook.com' },
+    { nome: 'LinkedIn',  href: 'https://www.linkedin.com/in/controlados-pra-salvar-81848b424/' },
+    { nome: 'Contato',   href: '#contato' }
   ];
 
-  links.forEach(nome => {
-    const btn = document.createElement('button');
+  links.forEach(({ nome, href }) => {
+    const btn = document.createElement('a');
     btn.className = 'orbital-badge';
     btn.textContent = nome;
+    btn.href = href;
+    if (href.startsWith('http')) {
+      btn.target = '_blank';
+      btn.rel = 'noopener noreferrer';
+    }
     orbitalContainer.appendChild(btn);
   });
 });
