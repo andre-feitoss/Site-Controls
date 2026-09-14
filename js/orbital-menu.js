@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { nome: 'TikTok',    href: 'https://www.tiktok.com/@controlados.pra.s' },
     { nome: 'Facebook',  href: 'https://facebook.com' },
     { nome: 'LinkedIn',  href: 'https://www.linkedin.com/in/controlados-pra-salvar-81848b424/' },
-    { nome: 'Canal Whatsapp',   href: 'https://whatsapp.com/channel/0029Vb8Hc2EBVJkv4Q74Vy0Z' }
+    { nome: 'Whatsapp',   href: 'https://whatsapp.com/channel/0029Vb8Hc2EBVJkv4Q74Vy0Z' }
   ];
 
   links.forEach(({ nome, href }) => {
