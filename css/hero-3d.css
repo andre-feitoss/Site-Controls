@@ -289,56 +289,6 @@
 }
 
 /* BOTÕES DE REDES SOCIAIS */
-.orbital-container {
-  position: absolute !important;
-
-  left: 50% !important;
-  bottom: 25px !important;
-
-  top: unset !important;
-  right: unset !important;
-  inset: unset !important;
-
-  transform: translateX(-50%) !important;
-
-  display: flex !important;
-  flex-direction: row !important;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 14px !important;
-
-  width: max-content !important;
-
-  z-index: 99999 !important;
-  pointer-events: auto !important;
-}
-
-.orbital-badge {
-  position: relative !important;
-
-  top: auto !important;
-  left: auto !important;
-
-  transform: none !important;
-
-  z-index: 100000 !important;
-
-  pointer-events: auto !important;
-  cursor: pointer !important;
-}
-.social-bar {
-  position: absolute;
-  left: 50%;
-  bottom: 25px;
-  transform: translateX(-50%);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  z-index: 50;
-}
-
 .social-btn {
   display: inline-flex;
   align-items: center;
