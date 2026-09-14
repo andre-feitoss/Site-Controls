@@ -291,41 +291,38 @@
 /* BOTÕES DE REDES SOCIAIS */
 .orbital-container {
   position: absolute !important;
+
   left: 50% !important;
-  bottom: 30px !important;
-  top: auto !important;
-  inset: auto !important;
+  bottom: 25px !important;
+
+  top: unset !important;
+  right: unset !important;
+  inset: unset !important;
 
   transform: translateX(-50%) !important;
 
   display: flex !important;
   flex-direction: row !important;
-  flex-wrap: nowrap !important;
-
   justify-content: center !important;
   align-items: center !important;
   gap: 14px !important;
 
-  pointer-events: auto !important;
-  z-index: 9999 !important;
-
   width: max-content !important;
+
+  z-index: 99999 !important;
+  pointer-events: auto !important;
 }
 
 .orbital-badge {
   position: relative !important;
+
   top: auto !important;
   left: auto !important;
 
   transform: none !important;
 
-  pointer-events: auto !important;
-  z-index: 10000 !important;
-}
+  z-index: 100000 !important;
 
-/* nenhum overlay pode bloquear clique */
-.hero-glow-center,
-.hero-light-beam,
-.band-overlay-glow {
-  pointer-events: none !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
 }
