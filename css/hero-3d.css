@@ -316,8 +316,7 @@
 /* Remove posicionamento orbital */
 .orbital-badge {
   position: relative !important;
-  top: auto !important;
-  left: auto !important;
+  top: unset !important;
+  left: unset !important;
   transform: none !important;
-  margin: 0 !important;
 }
