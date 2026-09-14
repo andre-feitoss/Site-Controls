@@ -334,3 +334,62 @@
   border-color: var(--neon-cyan);
   color: var(--neon-cyan);
 }
+/* ==========================================================================
+   CORREÇÃO DE VISIBILIDADE DOS BOTÕES HERO & SOCIAL BAR
+   ========================================================================== */
+
+/* Força os elementos a ficarem por cima da imagem e do Canvas 3D */
+.hero-cta-group,
+.social-bar {
+  position: relative;
+  z-index: 100 !important; /* Eleva os botões acima das camadas 3D */
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Agrupamento dos botões (Ouvir Agora / Conhecer a Banda) */
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+/* Layout da barra de botões sociais */
+.social-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 25px auto 10px auto;
+  max-width: 900px;
+}
+
+/* Estilo individual dos botões das redes sociais */
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: 20px;
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-smooth);
+}
+
+.social-btn:hover {
+  background: var(--royal-blue);
+  border-color: var(--neon-cyan);
+  color: var(--white);
+  box-shadow: var(--shadow-neon);
+  transform: translateY(-2px);
+}
