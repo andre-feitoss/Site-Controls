@@ -335,16 +335,17 @@
   color: var(--neon-cyan);
 }
 /* ==========================================================================
-   CORREÇÃO DE VISIBILIDADE DOS BOTÕES HERO & SOCIAL BAR
+   CORREÇÃO DE VISIBILIDADE E CLIQUE DOS BOTÕES HERO & SOCIAL BAR
    ========================================================================== */
 
-/* Força os elementos a ficarem por cima da imagem e do Canvas 3D */
+/* Força os elementos e os botões a ficarem acima das camadas 3D e liberarem o clique */
 .hero-cta-group,
 .social-bar {
   position: relative;
-  z-index: 100 !important; /* Eleva os botões acima das camadas 3D */
+  z-index: 9999 !important; /* Eleva os botões acima do Canvas/Stage 3D */
   opacity: 1 !important;
   visibility: visible !important;
+  pointer-events: auto !important; /* Garante que os cliques funcionem */
 }
 
 /* Agrupamento dos botões (Ouvir Agora / Conhecer a Banda) */
@@ -384,6 +385,10 @@
   text-decoration: none;
   backdrop-filter: blur(10px);
   transition: all var(--transition-smooth);
+  position: relative;
+  z-index: 10000 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
 }
 
 .social-btn:hover {
