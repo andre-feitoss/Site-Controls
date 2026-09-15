@@ -157,7 +157,6 @@
   font-size: 1.1rem;
 }
 
-/* Canvas Audio Waveform Visualizer */
 .visualizer-wrapper {
   width: 100%;
   height: 90px;
@@ -305,7 +304,6 @@
   font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 6px;
-
 }
 
 .video-meta {
@@ -314,79 +312,52 @@
 }
 
 /* --------------------------------------------------------------------------
-   4. Agenda de Eventos (Tour Dates)
+   4. Rádio CTRLS 24h (Página Dedicada / Seção Própria)
    -------------------------------------------------------------------------- */
-.events-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 40px;
-}
-
-.event-row {
-  display: grid;
-  grid-template-columns: 120px 1.5fr 1fr 140px 160px;
-  align-items: center;
-  padding: 20px 28px;
-  border-radius: 16px;
-  gap: 20px;
-}
-
-.event-date-box {
+.radio-hero-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(212, 175, 55, 0.1);
-  border: 1px solid var(--border-glass);
-  padding: 10px;
-  border-radius: 12px;
-}
-
-.event-day {
-  font-size: 1.6rem;
-  font-weight: 900;
-  color: var(--gold-light);
-  line-height: 1;
-}
-
-.event-month {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--white-muted);
-}
-
-.event-location {
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-
-.event-venue {
-  color: var(--white-muted);
-  font-size: 0.9rem;
-}
-
-.badge-ticket {
-  display: inline-block;
-  padding: 6px 14px;
-  border-radius: 30px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
+  min-height: 60vh;
+  padding: 60px 20px;
   text-align: center;
+  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+  border-radius: 32px;
+  border: 1px solid var(--border-glass);
+  margin-top: 40px;
 }
 
-.badge-available {
-  background: rgba(46, 204, 113, 0.15);
-  color: #2ecc71;
-  border: 1px solid rgba(46, 204, 113, 0.3);
-}
-
-.badge-soldout {
+.radio-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 50px;
   background: rgba(231, 76, 60, 0.15);
-  color: #e74c3c;
   border: 1px solid rgba(231, 76, 60, 0.3);
+  color: #e74c3c;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.radio-status-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #e74c3c;
+  border-radius: 50%;
+}
+
+.radio-pulsing {
+  animation: radio-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes radio-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.25); }
 }
 
 /* --------------------------------------------------------------------------
@@ -525,7 +496,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   7. Footer & Floating Audio Bar
+   7. Footer & Modais
    -------------------------------------------------------------------------- */
 .site-footer {
   border-top: 1px solid var(--border-glass);
@@ -578,7 +549,6 @@
   font-size: 0.85rem;
 }
 
-/* Modal Overlay Generic */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -626,7 +596,7 @@
   color: var(--gold-light);
 }
 
-/* Responsive Component Adjustments */
+/* Media Queries */
 @media (max-width: 992px) {
   .player-container {
     grid-template-columns: 1fr;
@@ -634,15 +604,6 @@
   }
   .player-cover-box {
     max-width: 280px;
-    margin: 0 auto;
-  }
-  .event-row {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 12px;
-  }
-  .event-date-box {
-    width: 100px;
     margin: 0 auto;
   }
   .contact-grid {
@@ -662,12 +623,4 @@
     gap: 12px;
     text-align: center;
   }
-}
-.radio-pulsing {
-  animation: radio-pulse 1.5s ease-in-out infinite;
-}
-
-@keyframes radio-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.15); }
 }
