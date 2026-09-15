@@ -463,3 +463,68 @@ h1, h2, h3, h4, h5, h6 {
   }
 
 }
+/* ===================================================
+   AJUSTES PARA DISPOSITIVOS MÓVEIS (MOBILE RESPONSIVE)
+   =================================================== */
+@media (max-width: 768px) {
+
+  /* 1. Ajustar o menu orbital/redes sociais no topo */
+  .social-menu,
+  #orbital-container {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 10px 15px !important;
+    width: 100% !important;
+    z-index: 10 !important;
+  }
+
+  .social-menu a,
+  #orbital-container a {
+    font-size: 0.75rem !important;
+    padding: 6px 12px !important;
+    background: rgba(15, 23, 42, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 20px !important;
+    white-space: nowrap !important;
+  }
+
+  /* 2. Reposicionar e destacar os botões de ação (Ouvir Agora / Conhecer a Banda) */
+  .hero-cta-group {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 90% !important;
+    max-width: 320px !important;
+    margin: 20px auto 0 auto !important;
+    position: relative !important;
+    z-index: 20 !important;
+  }
+
+  .hero-cta-group .btn {
+    width: 100% !important;
+    padding: 14px 20px !important;
+    font-size: 0.9rem !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    backdrop-filter: blur(8px) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+  }
+
+  /* 3. Garantir espaçamento adequado na imagem da capa no Mobile */
+  .stage-3d, 
+  .band-hero-wrapper {
+    max-height: 55vh !important;
+    margin-bottom: 10px !important;
+  }
+
+  .band-image {
+    object-fit: contain !important;
+    max-height: 55vh !important;
+  }
+}
