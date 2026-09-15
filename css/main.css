@@ -400,82 +400,18 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex !important;
   white-space: nowrap;
 }
-/* =========================================================
-   AJUSTE MOBILE - CABEÇALHO CTRLS
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-  .nav-container {
-    flex-wrap: nowrap !important;
-    position: relative;
-    min-height: 64px;
-  }
-
-  /* Logo fica à esquerda */
-  .logo-brand {
-    flex-shrink: 0;
-  }
-
-  /* Menu principal fica escondido no celular */
-  .nav-menu {
-    display: none !important;
-  }
-
-  /* Botão hambúrguer aparece */
-  .mobile-toggle {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Segunda linha das redes sociais */
-  #orbital-container.social-menu {
-    position: absolute !important;
-    top: 64px !important;
-    left: 0 !important;
-    width: 100% !important;
-
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-
-    gap: 5px 8px !important;
-    padding: 7px 6px !important;
-    margin: 0 !important;
-
-    background: rgba(3, 12, 25, 0.96);
-    border-top: 1px solid rgba(0, 229, 255, 0.15);
-    border-bottom: 1px solid rgba(0, 229, 255, 0.12);
-
-    z-index: 1001 !important;
-  }
-
-  #orbital-container.social-menu .orbital-badge {
-    font-size: 0.58rem !important;
-    padding: 4px 7px !important;
-    margin: 0 !important;
-  }
-
-  /* Hero começa abaixo do cabeçalho */
-  .hero-section {
-    padding-top: 45px;
-  }
-
-}
 /* ===================================================
-   CORREÇÃO DEFINITIVA MOBILE (SEM SOBREPOSIÇÃO)
+   MOBILE: FOTO NO TOPO E BOTÕES MAIORES NA PARTE DE BAIXO
    =================================================== */
 @media (max-width: 768px) {
 
-  /* 1. Desativa a navegação em absoluto para não sobrepor nada */
+  /* 1. Header Limpo no Topo */
   .navbar {
     position: relative !important;
     top: auto !important;
     left: auto !important;
     width: 100% !important;
-    height: auto !important;
-    background: #030712 !important;
+    background: rgba(3, 7, 18, 0.95) !important;
     padding: 10px 0 !important;
     z-index: 100 !important;
   }
@@ -484,35 +420,115 @@ h1, h2, h3, h4, h5, h6 {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 10px !important;
+    gap: 8px !important;
+  }
+
+  /* Menu Principal com rolagem lateral no topo */
+  .nav-menu {
+    display: flex !important;
     width: 100% !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    padding: 8px 12px !important;
+    gap: 15px !important;
+    justify-content: flex-start !important;
+    background: transparent !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
 
-  /* 2. Logo e Botões do Topo (Carrinho e Convidar) */
-  .logo-brand {
-    margin-bottom: 5px !important;
+  .nav-menu::-webkit-scrollbar {
+    display: none;
   }
 
-  /* Esconde o menu hambúrguer solto */
-  .mobile-toggle {
-    display: none !important;
+  .nav-menu a {
+    font-size: 0.8rem !important;
+    font-weight: 800 !important;
+    color: #fff !important;
+    text-transform: uppercase !important;
   }
 
-  /* 3. Redes Sociais Organizadas em Linhas Sem Encavalar */
-  .social-menu,
-  #orbital-container {
+  /* 2. Hero Section: Estrutura Vertical (Foto Primeiro, Botões Depois) */
+  .hero-section {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding-top: 10px !important;
+    padding-bottom: 30px !important;
+  }
+
+  /* 3. Foto da Banda Fica em CIMA de Todos os Botões */
+  .stage-3d,
+  .band-hero-wrapper {
+    order: 1 !important;
+    position: relative !important;
+    width: 100% !important;
+    max-height: 48vh !important;
+    margin: 0 0 20px 0 !important;
+  }
+
+  .band-image {
+    width: 100% !important;
+    max-height: 48vh !important;
+    object-fit: contain !important;
+  }
+
+  /* 4. Botões Principais ("OUVIR AGORA" e "CONHECER A BANDA") - Logo Abaixo da Foto */
+  .hero-cta-group {
+    order: 2 !important;
     position: relative !important;
     top: auto !important;
     left: auto !important;
     transform: none !important;
     display: flex !important;
-    flex-wrap: wrap !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 92% !important;
+    max-width: 420px !important;
+    margin: 10px auto 20px auto !important;
+    z-index: 50 !important;
+  }
+
+  .hero-cta-group .btn {
+    flex: 1 !important;
+    padding: 14px 10px !important;
+    font-size: 0.85rem !important; /* Texto bem maior */
+    font-weight: 800 !important;
+    text-align: center !important;
+    justify-content: center !important;
+    border-radius: 30px !important;
+    white-space: nowrap !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6) !important;
+  }
+
+  .hero-cta-group .btn-gold {
+    background: linear-gradient(135deg, #0088ff 0%, #0044ff 100%) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(0, 242, 254, 0.6) !important;
+  }
+
+  /* 5. Todos os Botões de Redes Sociais MAIORES - Na Parte de Baixo */
+  .social-menu,
+  #orbital-container {
+    order: 3 !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important; /* Organiza em grade na parte inferior */
     justify-content: center !important;
     align-items: center !important;
-    gap: 6px !important;
-    padding: 8px 10px !important;
-    width: 100% !important;
-    background: rgba(10, 16, 31, 0.9) !important;
+    gap: 10px !important; /* Espaçamento maior entre os botões */
+    padding: 15px 10px !important;
+    width: 95% !important;
+    max-width: 440px !important;
+    margin: 0 auto !important;
+    background: rgba(5, 10, 20, 0.75) !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    z-index: 50 !important;
   }
 
   .social-menu a,
@@ -521,65 +537,19 @@ h1, h2, h3, h4, h5, h6 {
     top: auto !important;
     left: auto !important;
     transform: none !important;
-    font-size: 0.65rem !important;
-    font-weight: 700 !important;
-    padding: 5px 10px !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(0, 242, 254, 0.3) !important;
-    border-radius: 12px !important;
-    color: #ffffff !important;
-    white-space: nowrap !important;
-  }
-
-  /* 4. Hero Section - Empurrada para Baixo para Ficar Livre */
-  .hero-section {
-    position: relative !important;
-    padding-top: 15px !important;
-    margin-top: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
+    display: inline-flex !important;
     align-items: center !important;
-  }
-
-  /* 5. Botões "OUVIR AGORA" e "CONHECER A BANDA" Ficam Abaixo das Redes */
-  .hero-cta-group {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
-    display: flex !important;
-    flex-direction: row !important;
     justify-content: center !important;
-    gap: 10px !important;
-    width: 90% !important;
-    max-width: 360px !important;
-    margin: 12px auto 15px auto !important;
-    z-index: 50 !important;
-  }
-
-  .hero-cta-group .btn {
-    flex: 1 !important;
-    padding: 10px 12px !important;
-    font-size: 0.72rem !important;
+    font-size: 0.8rem !important; /* Fonte bem mais visível */
     font-weight: 800 !important;
-    text-align: center !important;
-    justify-content: center !important;
-    border-radius: 20px !important;
+    padding: 10px 16px !important; /* Botões maiores e confortáveis para o toque */
+    background: rgba(12, 22, 42, 0.9) !important;
+    border: 1.5px solid rgba(0, 242, 254, 0.5) !important;
+    border-radius: 25px !important;
+    color: #ffffff !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase !important;
     white-space: nowrap !important;
-  }
-
-  /* 6. Foto da Banda no Centro (Livre e sem Botões por cima dos rostos) */
-  .stage-3d,
-  .band-hero-wrapper {
-    position: relative !important;
-    width: 100% !important;
-    max-height: 45vh !important;
-    margin-top: 10px !important;
-  }
-
-  .band-image {
-    width: 100% !important;
-    max-height: 45vh !important;
-    object-fit: contain !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
   }
 }
