@@ -257,25 +257,30 @@
         </div>
       </section>
 
-     <!-- SECTION 5: RADIO CTRLS (Grid 0, 2 - Move DOWN) -->
+    <!-- SECTION 5: RADIO CTRLS (Grid 0, 2 - Move DOWN) -->
 <section class="section-padding" id="radio">
   <div class="container">
     <div style="text-align:center;">
       <span class="section-tag"><i class="fas fa-broadcast-tower text-gold"></i> No ar 24h</span>
       <h2 class="section-title text-gradient">Rádio CTRLS</h2>
-      <p class="section-subtitle">Deixe tocando e viva o louvor a qualquer hora do dia</p>
+      <p class="section-subtitle">Sintonize e entre no exato momento da transmissão ao vivo</p>
     </div>
 
-    <div class="glass-card" style="padding: 30px; max-width: 700px; margin: 40px auto 0 auto;">
-      <iframe style="border-radius:16px; border: 1px solid var(--border-glass);"
-        src="https://open.spotify.com/embed/playlist/SEU_PLAYLIST_ID_AQUI?utm_source=generator&theme=0"
-        width="100%" height="380" frameBorder="0" allowfullscreen=""
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy"></iframe>
+    <div class="glass-card" style="padding: 50px 30px; text-align: center; max-width: 600px; margin: 40px auto 0 auto;">
+      <i class="fas fa-broadcast-tower text-gold" id="radio-icon" style="font-size: 3rem; margin-bottom: 20px; display:block;"></i>
 
-      <p style="color: var(--white-muted); font-size: 0.9rem; text-align:center; margin-top: 20px; line-height: 1.6;">
-        <i class="fas fa-heart text-gold"></i> Toque, deixe no ar e compartilhe a Rádio CTRLS com quem precisa ouvir uma palavra de fé hoje.
+      <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 8px;">Rádio CTRLS ao vivo</h3>
+      <p id="radio-status" style="color: var(--white-muted); font-size: 0.9rem; margin-bottom: 28px;">
+        Clique para sintonizar
       </p>
+
+      <button id="radio-toggle-btn" class="btn btn-gold" style="padding: 16px 40px; font-size: 1rem;">
+        <i class="fas fa-play" id="radio-toggle-icon"></i> <span id="radio-toggle-label">Ouvir Agora</span>
+      </button>
+
+      <audio id="radio-audio" preload="none" loop>
+        <source src="assets/audio/radio-ctrls.mp3" type="audio/mpeg">
+      </audio>
     </div>
   </div>
 </section>
