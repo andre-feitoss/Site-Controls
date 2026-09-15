@@ -466,6 +466,54 @@
   <script src="js/ctrls-transition.js"></script>
   <script src="js/spatial-nav.js"></script>
   <script src="js/app.js"></script>
+  <script>
+(function () {
+  const audio = document.getElementById('radio-audio');
+  const btn = document.getElementById('radio-toggle-btn');
+  const btnIcon = document.getElementById('radio-toggle-icon');
+  const btnLabel = document.getElementById('radio-toggle-label');
+  const status = document.getElementById('radio-status');
+  const icon = document.getElementById('radio-icon');
+
+  const RADIO_DURATION = 7200; // duração do MP3 em segundos (2h)
+  const RADIO_EPOCH = new Date('2026-01-01T00:00:00Z').getTime(); // ponto de referência fixo
+
+  function getCurrentRadioPosition() {
+    const elapsedSeconds = Math.floor((Date.now() - RADIO_EPOCH) / 1000);
+    return elapsedSeconds % RADIO_DURATION;
+  }
+
+  let isPlaying = false;
+
+  btn.addEventListener('click', function () {
+    if (!isPlaying) {
+      audio.currentTime = getCurrentRadioPosition();
+      audio.play().then(function () {
+        isPlaying = true;
+        btnIcon.className = 'fas fa-pause';
+        btnLabel.textContent = 'Pausar';
+        status.textContent = 'Tocando agora ao vivo';
+        icon.classList.add('radio-pulsing');
+      }).catch(function () {
+        status.textContent = 'Não foi possível tocar. Tente novamente.';
+      });
+    } else {
+      audio.pause();
+      isPlaying = false;
+      btnIcon.className = 'fas fa-play';
+      btnLabel.textContent = 'Ouvir Agora';
+      status.textContent = 'Pausado';
+      icon.classList.remove('radio-pulsing');
+    }
+  });
+
+  // Resincroniza com o horário real quando o arquivo termina e reinicia
+  audio.addEventListener('ended', function () {
+    audio.currentTime = getCurrentRadioPosition();
+    audio.play();
+  });
+})();
+</script>
 </body>
 </html>
 
