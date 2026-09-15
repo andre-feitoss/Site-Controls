@@ -464,89 +464,41 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 /* ===================================================
-   LAYOUT MOBILE EXATO (MENU E REDES COM ROLAGEM LATERAL)
+   CORREÇÃO DEFINITIVA MOBILE (SEM SOBREPOSIÇÃO)
    =================================================== */
 @media (max-width: 768px) {
 
-  /* Esconde o menu sanduíche e botão convidar solto */
+  /* 1. Desativa a navegação em absoluto para não sobrepor nada */
+  .navbar {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    background: #030712 !important;
+    padding: 10px 0 !important;
+    z-index: 100 !important;
+  }
+
+  .nav-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  /* 2. Logo e Botões do Topo (Carrinho e Convidar) */
+  .logo-brand {
+    margin-bottom: 5px !important;
+  }
+
+  /* Esconde o menu hambúrguer solto */
   .mobile-toggle {
     display: none !important;
   }
 
-  /* Container Geral do Header */
-  .navbar {
-    position: relative !important;
-    padding: 10px 0 !important;
-    background: transparent !important;
-  }
-
-  .nav-container {
-    flex-direction: column !important;
-    align-items: center !important;
-    padding: 0 !important;
-  }
-
-  /* 1. TOPO: Menu Principal de Navegação com Rolagem Lateral */
-  .nav-menu {
-    display: flex !important;
-    flex-direction: row !important;
-    width: 100% !important;
-    overflow-x: auto !important;
-    white-space: nowrap !important;
-    padding: 10px 15px !important;
-    gap: 16px !important;
-    justify-content: flex-start !important;
-    align-items: center !important;
-    background: rgba(5, 8, 16, 0.9) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Esconde barra no Firefox */
-  }
-
-  .nav-menu::-webkit-scrollbar {
-    display: none; /* Esconde barra no Chrome/Safari */
-  }
-
-  .nav-menu li {
-    display: inline-block !important;
-  }
-
-  .nav-menu a {
-    font-size: 0.75rem !important;
-    font-weight: 800 !important;
-    letter-spacing: 1px !important;
-    color: #fff !important;
-    text-transform: uppercase !important;
-  }
-
-  .nav-menu a.active {
-    color: var(--cyan, #00f2fe) !important;
-    border-bottom: 2px solid var(--cyan, #00f2fe) !important;
-    padding-bottom: 4px !important;
-  }
-
-  /* 2. MEIO: Foto da Banda */
-  .hero-section {
-    padding-top: 10px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  .stage-3d,
-  .band-hero-wrapper {
-    width: 100% !important;
-    max-height: 42vh !important;
-    margin: 5px 0 !important;
-  }
-
-  .band-image {
-    width: 100% !important;
-    max-height: 42vh !important;
-    object-fit: contain !important;
-  }
-
-  /* 3. ABAIXO DA FOTO: Faixa de Redes Sociais com Rolagem Lateral */
+  /* 3. Redes Sociais Organizadas em Linhas Sem Encavalar */
   .social-menu,
   #orbital-container {
     position: relative !important;
@@ -554,79 +506,80 @@ h1, h2, h3, h4, h5, h6 {
     left: auto !important;
     transform: none !important;
     display: flex !important;
-    flex-direction: row !important;
-    width: 100% !important;
-    overflow-x: auto !important;
-    white-space: nowrap !important;
-    gap: 8px !important;
-    padding: 10px 15px !important;
-    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
     align-items: center !important;
-    background: rgba(0, 0, 0, 0.6) !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-    margin-top: 5px !important;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .social-menu::-webkit-scrollbar,
-  #orbital-container::-webkit-scrollbar {
-    display: none;
+    gap: 6px !important;
+    padding: 8px 10px !important;
+    width: 100% !important;
+    background: rgba(10, 16, 31, 0.9) !important;
   }
 
   .social-menu a,
   #orbital-container a {
-    display: inline-flex !important;
-    align-items: center !important;
-    font-size: 0.68rem !important;
-    font-weight: 800 !important;
-    padding: 6px 14px !important;
-    background: rgba(8, 14, 28, 0.85) !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    font-size: 0.65rem !important;
+    font-weight: 700 !important;
+    padding: 5px 10px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
     border: 1px solid rgba(0, 242, 254, 0.3) !important;
-    border-radius: 20px !important;
+    border-radius: 12px !important;
     color: #ffffff !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.5px !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5) !important;
+    white-space: nowrap !important;
   }
 
-  /* 4. BASE: Botões "OUVIR AGORA" e "CONHECER A BANDA" Lado a Lado */
+  /* 4. Hero Section - Empurrada para Baixo para Ficar Livre */
+  .hero-section {
+    position: relative !important;
+    padding-top: 15px !important;
+    margin-top: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* 5. Botões "OUVIR AGORA" e "CONHECER A BANDA" Ficam Abaixo das Redes */
   .hero-cta-group {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
     display: flex !important;
     flex-direction: row !important;
     justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    max-width: 380px !important;
     gap: 10px !important;
-    padding: 0 15px !important;
-    margin: 20px auto 10px auto !important;
+    width: 90% !important;
+    max-width: 360px !important;
+    margin: 12px auto 15px auto !important;
+    z-index: 50 !important;
   }
 
   .hero-cta-group .btn {
     flex: 1 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 10px 8px !important;
-    font-size: 0.7rem !important;
+    padding: 10px 12px !important;
+    font-size: 0.72rem !important;
     font-weight: 800 !important;
-    letter-spacing: 0.5px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    border-radius: 20px !important;
     white-space: nowrap !important;
-    border-radius: 25px !important;
   }
 
-  .hero-cta-group .btn-gold {
-    background: linear-gradient(135deg, #0088ff 0%, #0044ff 100%) !important;
-    color: #ffffff !important;
-    border: 1px solid rgba(0, 242, 254, 0.5) !important;
-    box-shadow: 0 0 12px rgba(0, 136, 255, 0.5) !important;
+  /* 6. Foto da Banda no Centro (Livre e sem Botões por cima dos rostos) */
+  .stage-3d,
+  .band-hero-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    max-height: 45vh !important;
+    margin-top: 10px !important;
   }
 
-  .hero-cta-group .btn-outline {
-    background: rgba(10, 10, 10, 0.8) !important;
-    color: #ffffff !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  .band-image {
+    width: 100% !important;
+    max-height: 45vh !important;
+    object-fit: contain !important;
   }
 }
