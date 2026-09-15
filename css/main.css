@@ -401,70 +401,49 @@ h1, h2, h3, h4, h5, h6 {
   white-space: nowrap;
 }
 /* ===================================================
-   MOBILE: FOTO NO TOPO E BOTÕES MAIORES NA PARTE DE BAIXO
+   CORREÇÃO TOTAL MOBILE (DISPOSIÇÃO LIMPA SEM SOBREPOSIÇÃO)
    =================================================== */
 @media (max-width: 768px) {
 
-  /* 1. Header Limpo no Topo */
+  /* 1. Esconde a barra de menu texto e botão convidar flutuante para despoluir */
+  .nav-menu,
+  .mobile-toggle,
+  .btn-invite-nav,
+  .cart-icon-wrapper {
+    display: none !important;
+  }
+
   .navbar {
     position: relative !important;
     top: auto !important;
     left: auto !important;
-    width: 100% !important;
-    background: rgba(3, 7, 18, 0.95) !important;
-    padding: 10px 0 !important;
-    z-index: 100 !important;
-  }
-
-  .nav-container {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 8px !important;
-  }
-
-  /* Menu Principal com rolagem lateral no topo */
-  .nav-menu {
-    display: flex !important;
-    width: 100% !important;
-    overflow-x: auto !important;
-    white-space: nowrap !important;
-    padding: 8px 12px !important;
-    gap: 15px !important;
-    justify-content: flex-start !important;
+    height: auto !important;
     background: transparent !important;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    padding: 0 !important;
   }
 
-  .nav-menu::-webkit-scrollbar {
-    display: none;
-  }
-
-  .nav-menu a {
-    font-size: 0.8rem !important;
-    font-weight: 800 !important;
-    color: #fff !important;
-    text-transform: uppercase !important;
-  }
-
-  /* 2. Hero Section: Estrutura Vertical (Foto Primeiro, Botões Depois) */
+  /* 2. Container da Seção Hero Organizado em Coluna */
   .hero-section {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    justify-content: flex-start !important;
     padding-top: 10px !important;
-    padding-bottom: 30px !important;
+    padding-bottom: 20px !important;
+    min-height: auto !important;
   }
 
-  /* 3. Foto da Banda Fica em CIMA de Todos os Botões */
+  /* 3. Foto da Banda - Topo e Limpa */
   .stage-3d,
   .band-hero-wrapper {
     order: 1 !important;
     position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
     width: 100% !important;
     max-height: 48vh !important;
-    margin: 0 0 20px 0 !important;
+    margin: 0 0 15px 0 !important;
   }
 
   .band-image {
@@ -473,62 +452,29 @@ h1, h2, h3, h4, h5, h6 {
     object-fit: contain !important;
   }
 
-  /* 4. Botões Principais ("OUVIR AGORA" e "CONHECER A BANDA") - Logo Abaixo da Foto */
-  .hero-cta-group {
+  /* 4. Faixa de Redes Sociais - Logo Abaixo da Foto */
+  .social-menu,
+  #orbital-container {
     order: 2 !important;
     position: relative !important;
     top: auto !important;
     left: auto !important;
+    bottom: auto !important;
+    right: auto !important;
     transform: none !important;
     display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    gap: 12px !important;
-    width: 92% !important;
-    max-width: 420px !important;
-    margin: 10px auto 20px auto !important;
-    z-index: 50 !important;
-  }
-
-  .hero-cta-group .btn {
-    flex: 1 !important;
-    padding: 14px 10px !important;
-    font-size: 0.85rem !important; /* Texto bem maior */
-    font-weight: 800 !important;
-    text-align: center !important;
-    justify-content: center !important;
-    border-radius: 30px !important;
-    white-space: nowrap !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6) !important;
-  }
-
-  .hero-cta-group .btn-gold {
-    background: linear-gradient(135deg, #0088ff 0%, #0044ff 100%) !important;
-    color: #ffffff !important;
-    border: 1px solid rgba(0, 242, 254, 0.6) !important;
-  }
-
-  /* 5. Todos os Botões de Redes Sociais MAIORES - Na Parte de Baixo */
-  .social-menu,
-  #orbital-container {
-    order: 3 !important;
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
-    display: flex !important;
-    flex-wrap: wrap !important; /* Organiza em grade na parte inferior */
+    flex-wrap: wrap !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 10px !important; /* Espaçamento maior entre os botões */
-    padding: 15px 10px !important;
+    gap: 8px !important;
+    padding: 12px 10px !important;
     width: 95% !important;
     max-width: 440px !important;
-    margin: 0 auto !important;
-    background: rgba(5, 10, 20, 0.75) !important;
+    margin: 0 auto 15px auto !important;
+    background: rgba(5, 10, 20, 0.8) !important;
     border-radius: 16px !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    z-index: 50 !important;
+    border: 1px solid rgba(0, 242, 254, 0.2) !important;
+    z-index: 20 !important;
   }
 
   .social-menu a,
@@ -540,16 +486,60 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    font-size: 0.8rem !important; /* Fonte bem mais visível */
+    font-size: 0.75rem !important;
     font-weight: 800 !important;
-    padding: 10px 16px !important; /* Botões maiores e confortáveis para o toque */
-    background: rgba(12, 22, 42, 0.9) !important;
-    border: 1.5px solid rgba(0, 242, 254, 0.5) !important;
-    border-radius: 25px !important;
+    padding: 8px 14px !important;
+    background: rgba(10, 20, 38, 0.9) !important;
+    border: 1.5px solid rgba(0, 242, 254, 0.4) !important;
+    border-radius: 20px !important;
     color: #ffffff !important;
-    letter-spacing: 0.8px !important;
+    letter-spacing: 0.5px !important;
     text-transform: uppercase !important;
     white-space: nowrap !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6) !important;
+  }
+
+  /* 5. Botões Principais ("OUVIR AGORA" e "CONHECER A BANDA") - Na Base */
+  .hero-cta-group {
+    order: 3 !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+    width: 92% !important;
+    max-width: 420px !important;
+    margin: 0 auto 10px auto !important;
+    z-index: 20 !important;
+  }
+
+  .hero-cta-group .btn {
+    flex: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 12px 10px !important;
+    font-size: 0.8rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px !important;
+    white-space: nowrap !important;
+    border-radius: 25px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6) !important;
+  }
+
+  .hero-cta-group .btn-gold {
+    background: linear-gradient(135deg, #0088ff 0%, #0044ff 100%) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(0, 242, 254, 0.6) !important;
+  }
+
+  .hero-cta-group .btn-outline {
+    background: rgba(8, 12, 22, 0.85) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
   }
 }
