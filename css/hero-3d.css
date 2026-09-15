@@ -118,7 +118,7 @@
   stroke-dasharray: 8 6;
   opacity: 0.65;
   filter: drop-shadow(0 0 12px rgba(0, 229, 255, 0.8));
-  animation: rotateRing 60s linear infinite;
+  /* animation: rotateRing 60s linear infinite; */ /* <-- Remova ou comente esta linha */
 }
 
 @keyframes rotateRing {
