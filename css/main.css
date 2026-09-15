@@ -561,3 +561,123 @@ h1, h2, h3, h4, h5, h6 {
     backdrop-filter: blur(6px) !important;
   }
 }
+/* ===================================================
+   LAYOUT MOBILE LIMPO E ORGANIZADO
+   =================================================== */
+@media (max-width: 768px) {
+
+  /* 1. Header Fixo e Organizado */
+  .navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 65px !important;
+    background: rgba(5, 10, 20, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    z-index: 1000 !important;
+    padding: 0 15px !important;
+  }
+
+  .nav-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* 2. Oculta o orbital/redes soltas do topo da tela principal */
+  #orbital-container,
+  .social-menu {
+    display: none !important;
+  }
+
+  /* 3. Menu de Navegação Escondido (Abre apenas no clique do botão Hamburguer) */
+  .nav-menu {
+    display: none !important;
+    position: fixed !important;
+    top: 65px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: calc(100vh - 65px) !important;
+    background: rgba(5, 10, 20, 0.98) !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 30px 20px !important;
+    gap: 20px !important;
+    overflow-y: auto !important;
+    z-index: 999 !important;
+  }
+
+  .nav-menu.active {
+    display: flex !important;
+  }
+
+  .nav-menu li {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .nav-menu a {
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    display: block !important;
+    padding: 10px 0 !important;
+  }
+
+  /* 4. Botão Hamburguer Visível */
+  .mobile-toggle {
+    display: block !important;
+    background: transparent !important;
+    border: none !important;
+    color: var(--gold, #d4af37) !important;
+    font-size: 1.6rem !important;
+    cursor: pointer !important;
+  }
+
+  /* 5. Área Hero (Foto da Banda e Botões Principais) */
+  .hero-section {
+    padding-top: 80px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .stage-3d,
+  .band-hero-wrapper {
+    width: 100% !important;
+    max-height: 50vh !important;
+    margin: 10px 0 !important;
+  }
+
+  .band-image {
+    width: 100% !important;
+    max-height: 50vh !important;
+    object-fit: contain !important;
+  }
+
+  /* 6. Botões "OUVIR AGORA" e "CONHECER A BANDA" alinhados */
+  .hero-cta-group {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 85% !important;
+    max-width: 320px !important;
+    gap: 12px !important;
+    margin: 15px auto 30px auto !important;
+    position: relative !important;
+    z-index: 20 !important;
+  }
+
+  .hero-cta-group .btn {
+    width: 100% !important;
+    padding: 14px !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    justify-content: center !important;
+    border-radius: 30px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6) !important;
+  }
+}
