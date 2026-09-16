@@ -441,48 +441,6 @@
   <script src="js/spatial-nav.js"></script>
   <script src="js/app.js"></script>
   
-  <script>
-  (function () {
-    const audio = document.getElementById('radio-audio');
-    const btn = document.getElementById('radio-toggle-btn');
-    const btnIcon = document.getElementById('radio-toggle-icon');
-    const btnLabel = document.getElementById('radio-toggle-label');
-
-    const RADIO_DURATION = 7200; // Duração do MP3 em segundos (2h)
-    const RADIO_EPOCH = new Date('2026-01-01T00:00:00Z').getTime();
-
-    function getCurrentRadioPosition() {
-      const elapsedSeconds = Math.floor((Date.now() - RADIO_EPOCH) / 1000);
-      return elapsedSeconds % RADIO_DURATION;
-    }
-
-    let isPlaying = false;
-
-    btn.addEventListener('click', function () {
-      if (!isPlaying) {
-        audio.currentTime = getCurrentRadioPosition();
-        audio.play().then(function () {
-          isPlaying = true;
-          btnIcon.className = 'fas fa-pause';
-          btnLabel.textContent = 'Pausar';
-        }).catch(function (error) {
-          console.warn('Não foi possível reproduzir o áudio:', error);
-        });
-      } else {
-        audio.pause();
-        isPlaying = false;
-        btnIcon.className = 'fas fa-play';
-        btnLabel.textContent = 'Ouvir Agora';
-      }
-    });
-
-    audio.addEventListener('ended', function () {
-      audio.currentTime = getCurrentRadioPosition();
-      audio.play().catch(function (error) {
-        console.warn('Erro ao reiniciar rádio:', error);
-      });
-    });
-  })();
-  </script>
+ 
 </body>
 </html>
