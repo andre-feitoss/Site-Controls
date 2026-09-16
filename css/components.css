@@ -361,25 +361,15 @@
   color: var(--gold-light);
 }
 
-/* --------------------------------------------------------------------------
-   5. Responsividade
-   -------------------------------------------------------------------------- */
-@media (max-width: 992px) {
-  .player-container {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .player-cover-box {
-    max-width: 280px;
-    margin: 0 auto;
-  }
-}
+/* ==================================================
+   FOOTER PROFISSIONAL
+   ================================================== */
 
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .footer-col-title {
@@ -419,4 +409,33 @@
   gap: 10px;
   color: var(--white-muted);
   font-size: 0.85rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  color: var(--white-muted);
+}
+
+.contact-item i {
+  color: var(--neon-cyan);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
 }
