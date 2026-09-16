@@ -597,3 +597,11 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center !important;
   }
 }
+
+.footer-description {
+  color: var(--white-muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  max-width: 320px;
+  margin-top: 16px;
+}
