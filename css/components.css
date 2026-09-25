@@ -480,8 +480,8 @@
     padding:16px;
     border-radius:14px;
     border:1px solid rgba(0,200,255,.25);
-    background:rgba(255,255,255,.04);
-    color:#fff;
+   background:#ffffff;
+    color:#000;
     font-size:15px;
     transition:.3s;
 }
@@ -497,7 +497,15 @@
 .form-textarea{
     min-height:140px;
     resize:vertical;
+    background:#ffffff;
+    color:#000000;
+    border-radius:4px;
 }
+
+.form-textarea::placeholder{
+    color:#777;
+}
+
 
 .contact-form .btn{
     height:58px;
